@@ -1,0 +1,19 @@
+﻿
+@model WebApplication2.ViewModels.EditItemViewModel
+
+@{
+    ViewData["Title"] = "Edit Item";
+}
+
+<h2>Edit/Remove</h2>
+
+<form action='EditItem' method='POST' align="left">
+    <label>
+        Please enter an new value for this item:
+    </label><br><br>
+    <input name="NewElement2" type="text" default=@ViewBag.NewElement1 value=@ViewBag.NewElement1 />
+    <br /><br />
+    <input type="submit" value="Edit Item" />
+
+</form>
+
