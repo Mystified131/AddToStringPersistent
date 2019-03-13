@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebApplication2</title>
+    <title>Random String Generator/Persistent</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -17,38 +17,31 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">WebApplication2</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Add</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Result">String</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="EditItem">Edit</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="SearchSelect">Search</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Sort">Sort</a></li>
+    <div class="jumbotron">
 
-                </ul>
-                <partial name="_LoginPartial" />
-            </div>
-        </div>
-    </nav>
+        <h1 align="center">Add To Dictionary Persistent</h1>
 
-    <partial name="_CookieConsentPartial" />
+        <br />
+
+        <p>
+            <h4 align="center">
+
+
+                <a asp-area="" asp-controller="Home" asp-action="Index">Add</a>
+                <a asp-area="" asp-controller="Home" asp-action="Result">Catalog</a>
+                <a asp-area="" asp-controller="Home" asp-action="EditItem">Edit</a>
+                <a asp-area="" asp-controller="Home" asp-action="SearchSelect">Search</a>
+                <a asp-area="" asp-controller="Home" asp-action="Sort">Sort</a>
+
+            </h4>
+        </p>
+    </div>
 
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2019 - WebApplication2</p>
+            <p>&copy; 2019 Thomas Park</p>
         </footer>
     </div>
 
