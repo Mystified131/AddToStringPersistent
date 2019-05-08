@@ -312,6 +312,62 @@ namespace WebApplication2.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult Shuffle()
+        {
+            List<Stringelement> TheList = context.Stringelements.ToList();
+
+
+            if (TheList.Count > 0)
+            {
+                StringBuilder Builder = new StringBuilder();
+
+                foreach (var item in TheList)
+                {
+                    Builder.Append(item.Element);
+
+                }
+
+                string Buildlist = Builder.ToString();
+
+                var Shufflelist = Buildlist.OrderBy(a => Guid.NewGuid()).ToList();
+
+                ShuffleViewModel shuffleViewModel = new ShuffleViewModel();
+
+                var builder = new StringBuilder();
+
+                foreach (char item in Shufflelist)
+                {
+
+                    builder.Append(item);
+
+                }
+
+                shuffleViewModel.Shufflestring = builder.ToString();
+                                  
+
+                return View(shuffleViewModel);
+            }
+
+            else
+            {
+                return Redirect("/");
+            }
+        }
+
+        public IActionResult Delete()
+        {
+            List<Stringelement> TheList = context.Stringelements.ToList();
+
+            foreach (Stringelement elem in TheList) {
+
+                context.Stringelements.Remove(elem);
+                    
+                    }
+            context.SaveChanges();
+            return Redirect("/");
+        }
+
     }
 
 }
